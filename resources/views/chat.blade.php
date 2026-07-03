@@ -200,6 +200,7 @@
             display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
         }
         @media (min-width: 640px) { .floating-links { bottom: 18px; } }
+        @media (max-width: 768px) { .floating-links{ display:none;} }
         .floating-link {
             font-size: 11px; font-weight: 600;
             color: rgba(255,255,255,0.55);
@@ -356,6 +357,10 @@
                 opacity: 0;
                 transform: rotate(-45deg) translateY(2500px);
             }
+        }
+
+        #send-btn:hover{
+            cursor: pointer;
         }
     </style>
 </head>
