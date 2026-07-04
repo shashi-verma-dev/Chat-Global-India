@@ -18,11 +18,16 @@ class BadWordFilterService
      * @var list<string>
      */
     private array $badWords = [
-        'badword1',
-        'badword2',
-        'badword3',
-        // Add your actual list here — keeping placeholders avoids
-        // shipping real slurs inside source code.
+        'shashi',
+        'shashii',
+        'shashi verma',
+        'shashi varma',
+        'shashiverma',
+        'shashivarma',
+        'sasssi',
+        'shasssi',
+        'shashiverma',
+        'sasi'
     ];
 
     /**

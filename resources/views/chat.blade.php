@@ -162,78 +162,207 @@
 
         /* ─── Bottom Canvas Drawer ───────────────────────────── */
         .bottom-canvas-overlay {
-            position: fixed; inset: 0; z-index: 60;
-            background: rgba(0,0,0,0.55);
-            opacity: 0; visibility: hidden;
+            position: fixed;
+            inset: 0;
+            z-index: 60;
+            background: rgba(0, 0, 0, 0.55);
+            opacity: 0;
+            visibility: hidden;
             transition: opacity 0.25s ease, visibility 0.25s ease;
         }
-        .bottom-canvas-overlay.open { opacity: 1; visibility: visible; }
+
+        .bottom-canvas-overlay.open {
+            opacity: 1;
+            visibility: visible;
+        }
+
         .bottom-canvas {
-            position: fixed; bottom: 0; left: 0; right: 0; z-index: 61;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 61;
             height: 52vh;
             background: #0f0f13;
-            border-top: 1px solid rgba(255,255,255,0.08);
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
             border-radius: 18px 18px 0 0;
             transform: translateY(100%);
-            transition: transform 0.3s cubic-bezier(0.32,0.72,0,1);
+            transition: transform 0.3s cubic-bezier(0.32, 0.72, 0, 1);
             overflow-y: auto;
             padding: 20px 24px 28px;
             font-family: 'Inter', sans-serif;
             color: #e2e8f0;
         }
-        .bottom-canvas.open { transform: translateY(0); }
-        .bottom-canvas::-webkit-scrollbar { width: 4px; }
-        .bottom-canvas::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+
+        .bottom-canvas.open {
+            transform: translateY(0);
+        }
+
+        .bottom-canvas::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .bottom-canvas::-webkit-scrollbar-thumb {
+            background: #334155;
+            border-radius: 4px;
+        }
+
         .canvas-handle {
-            width: 40px; height: 4px;
-            background: rgba(255,255,255,0.15);
-            border-radius: 99px; margin: 0 auto 16px;
+            width: 40px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 99px;
+            margin: 0 auto 16px;
         }
-        .canvas-title { font-size: 13px; font-weight: 700; color: #a78bfa; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 14px; }
-        .canvas-section { margin-bottom: 14px; }
-        .canvas-section h3 { font-size: 11px; font-weight: 600; color: #7c3aed; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
-        .canvas-section p, .canvas-section li { font-size: 12.5px; color: #94a3b8; line-height: 1.6; }
-        .canvas-section ul { padding-left: 14px; list-style: disc; }
-        .canvas-section code { font-size: 11.5px; background: rgba(255,255,255,0.06); border-radius: 4px; padding: 1px 5px; color: #c084fc; font-family: monospace; }
+
+        .canvas-title {
+            font-size: 13px;
+            font-weight: 700;
+            color: #a78bfa;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            margin-bottom: 14px;
+        }
+
+        .canvas-section {
+            margin-bottom: 14px;
+        }
+
+        .canvas-section h3 {
+            font-size: 11px;
+            font-weight: 600;
+            color: #7c3aed;
+            text-transform: uppercase;
+            letter-spacing: 0.06em;
+            margin-bottom: 6px;
+        }
+
+        .canvas-section p,
+        .canvas-section li {
+            font-size: 12.5px;
+            color: #94a3b8;
+            line-height: 1.6;
+        }
+
+        .canvas-section ul {
+            padding-left: 14px;
+            list-style: disc;
+        }
+
+        .canvas-section code {
+            font-size: 11.5px;
+            background: rgba(255, 255, 255, 0.06);
+            border-radius: 4px;
+            padding: 1px 5px;
+            color: #c084fc;
+            font-family: monospace;
+        }
+
         .floating-links {
-            position: fixed; bottom: 85px; right: 18px; z-index: 55;
-            display: flex; flex-direction: column; align-items: flex-end; gap: 6px;
+            position: fixed;
+            bottom: 85px;
+            right: 18px;
+            z-index: 55;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 6px;
         }
-        @media (min-width: 640px) { .floating-links { bottom: 18px; } }
-        @media (max-width: 768px) { .floating-links{ display:none;} }
+
+        @media (min-width: 640px) {
+            .floating-links {
+                bottom: 18px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .floating-links {
+                display: none;
+            }
+
+            header {
+                margin-top: 25px;
+            }
+
+            footer {
+                margin-bottom: 25px;
+            }
+        }
+
         .floating-link {
-            font-size: 11px; font-weight: 600;
-            color: rgba(255,255,255,0.55);
-            background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 99px; padding: 4px 12px;
-            cursor: pointer; letter-spacing: 0.04em;
+            font-size: 11px;
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.55);
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 99px;
+            padding: 4px 12px;
+            cursor: pointer;
+            letter-spacing: 0.04em;
             transition: color 0.2s, background 0.2s;
             user-select: none;
         }
-        .floating-link:hover { color: #c084fc; background: rgba(139,92,246,0.12); border-color: rgba(139,92,246,0.3); }
-        .suggestion-form input, .suggestion-form textarea {
-            width: 100%; background: rgba(255,255,255,0.05);
-            border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 8px; padding: 8px 12px;
-            font-size: 12.5px; color: #e2e8f0; outline: none;
+
+        .floating-link:hover {
+            color: #c084fc;
+            background: rgba(139, 92, 246, 0.12);
+            border-color: rgba(139, 92, 246, 0.3);
+        }
+
+        .suggestion-form input,
+        .suggestion-form textarea {
+            width: 100%;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 8px;
+            padding: 8px 12px;
+            font-size: 12.5px;
+            color: #e2e8f0;
+            outline: none;
             font-family: 'Inter', sans-serif;
-            resize: none; margin-bottom: 8px;
+            resize: none;
+            margin-bottom: 8px;
         }
-        .suggestion-form input::placeholder, .suggestion-form textarea::placeholder { color: #475569; }
-        .suggestion-form input:focus, .suggestion-form textarea:focus { border-color: #7c3aed; }
+
+        .suggestion-form input::placeholder,
+        .suggestion-form textarea::placeholder {
+            color: #475569;
+        }
+
+        .suggestion-form input:focus,
+        .suggestion-form textarea:focus {
+            border-color: #7c3aed;
+        }
+
         .suggestion-form button {
-            font-size: 12px; font-weight: 600; color: #fff;
-            background: #7c3aed; border: none; border-radius: 8px;
-            padding: 8px 20px; cursor: pointer; transition: background 0.2s;
+            font-size: 12px;
+            font-weight: 600;
+            color: #fff;
+            background: #7c3aed;
+            border: none;
+            border-radius: 8px;
+            padding: 8px 20px;
+            cursor: pointer;
+            transition: background 0.2s;
         }
-        .suggestion-form button:hover { background: #6d28d9; }
+
+        .suggestion-form button:hover {
+            background: #6d28d9;
+        }
+
         .dev-avatar {
-            width: 52px; height: 52px; border-radius: 50%;
+            width: 52px;
+            height: 52px;
+            border-radius: 50%;
             background: linear-gradient(135deg, #7c3aed, #06b6d4);
-            display: flex; align-items: center; justify-content: center;
-            font-size: 22px; font-weight: 800; color: #fff;
-            margin-bottom: 12px; flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 12px;
+            flex-shrink: 0;
         }
 
         /* ─── Shooting Stars Background ──────────────────────── */
@@ -359,7 +488,7 @@
             }
         }
 
-        #send-btn:hover{
+        #send-btn:hover {
             cursor: pointer;
         }
     </style>
@@ -446,15 +575,16 @@
                         </div>
                     @endif
 
-                    <div
-                        class="flex items-center gap-1.5 px-1 bg-white border border-slate-100 rounded-full shadow-sm p-1 mt-0.5">
+                    <div class="flex items-center gap-1 mt-1 bg-white/70 backdrop-blur-md border border-slate-200/60 rounded-full shadow-sm transition-all duration-300 hover:bg-white hover:shadow-md hover:border-slate-200"
+                        style="background: black; border: none;">
                         @foreach ($emojiList as $emoji)
                             <form class="inline-flex reaction-form m-0" data-message-id="{{ $message->id }}"
                                 data-emoji="{{ $emoji }}">
                                 <button type="submit"
-                                    class="reaction-btn flex items-center gap-1 text-xs hover:bg-slate-50 transition-colors duration-200 cursor-pointer rounded-full px-2 py-0.5"
+                                    class="reaction-btn group flex items-center justify-center gap-1.5 text-xs transition-all duration-200 cursor-pointer rounded-full px-1.5 py-1 hover:bg-purple-50 text-slate-500 hover:text-purple-600"
                                     aria-label="React with {{ $emoji }}">
-                                    <span class="emoji-icon inline-block">{{ $emoji }}</span>
+                                    <span
+                                        class="emoji-icon inline-block transform group-hover:scale-125 group-hover:-translate-y-0.5 transition-all duration-200">{{ $emoji }}</span>
                                     <span class="reactions-count font-semibold tabular-nums"
                                         data-emoji-target="{{ $emoji }}">
                                         {{ $reactions[$emoji] ?? 0 }}

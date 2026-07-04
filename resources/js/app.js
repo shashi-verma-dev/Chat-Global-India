@@ -124,9 +124,9 @@ document.addEventListener('DOMContentLoaded', () => {
             emojiList.forEach(emoji => {
                 reactionsHtml += `
                     <form class="inline-flex reaction-form m-0" data-message-id="${e.id}" data-emoji="${emoji}">
-                        <button type="submit" class="reaction-btn flex items-center gap-1 text-xs hover:bg-slate-50 transition-colors duration-200 cursor-pointer rounded-full px-2 py-0.5" aria-label="React with ${emoji}">
-                            <span class="emoji-icon inline-block">${emoji}</span>
-                            <span class="reactions-count font-semibold text-gray-400 tabular-nums" data-emoji-target="${emoji}">
+                        <button type="submit" class="reaction-btn group flex items-center justify-center gap-1.5 text-xs transition-all duration-200 cursor-pointer rounded-full px-2.5 py-1 hover:bg-purple-50 text-slate-500 hover:text-purple-600" aria-label="React with ${emoji}">
+                            <span class="emoji-icon inline-block transform group-hover:scale-125 group-hover:-translate-y-0.5 transition-all duration-200">${emoji}</span>
+                            <span class="reactions-count font-semibold tabular-nums" data-emoji-target="${emoji}">
                                 0
                             </span>
                         </button>
@@ -141,7 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <div class="message-bubble bg-white border border-slate-100 rounded-xl ${bubbleCornerClass} px-4 py-1 shadow-sm">
                     <p class="text-sm text-gray-700 leading-relaxed message-text"></p>
                 </div>
-                <div class="flex items-center gap-1.5 px-1 bg-white border border-slate-100 rounded-full shadow-sm p-1 mt-0.5">
+                <div class="flex items-center gap-1 mt-1 bg-white/70 backdrop-blur-md border border-slate-200/60 rounded-full shadow-sm p-1 transition-all duration-300 hover:bg-white hover:shadow-md hover:border-slate-200"  style="background: black; border: none;">
                     ${reactionsHtml}
                 </div>
             `;
