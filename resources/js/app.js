@@ -23,6 +23,15 @@ function playNotificationSound() {
     }
 }
 
+// function playNotificationSound() {
+//     try {
+//         const audio = new Audio('/audio/notification.wav');
+//         audio.play().catch(e => console.error("Audio playback failed", e));
+//     } catch (e) {
+//         console.error("Audio playback failed", e);
+//     }
+// }
+
 function showToast(message) {
     const aside = document.getElementById('notifications-aside');
     if (!aside) return;
@@ -109,8 +118,7 @@ document.addEventListener('DOMContentLoaded', () => {
         .listen('.message.created', (e) => {
             if (!messagesArea) return;
 
-            const count = messagesArea.querySelectorAll('.message-card').length;
-            const isEven = count % 2 === 0;
+            const isEven = e.id % 2 === 0;
 
             const alignCardClass = isEven ? 'self-start items-start' : 'self-end items-end';
             const bubbleCornerClass = isEven ? 'rounded-tl-sm' : 'rounded-tr-sm';

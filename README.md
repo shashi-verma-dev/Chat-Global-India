@@ -307,7 +307,7 @@ These are reusable, injectable classes that encapsulate focused business logic, 
 
 ```env
 # The public URL of the Laravel backend. Used for internal redirects.
-APP_URL=http://192.168.1.8:8000
+APP_URL=http://192.168.1.17:8000
 
 # Tell Laravel to use Reverb for broadcasting (not Pusher cloud).
 BROADCAST_CONNECTION=reverb
@@ -324,7 +324,7 @@ CACHE_STORE=redis
 REVERB_APP_ID=your_id
 REVERB_APP_KEY=your_key
 REVERB_APP_SECRET=your_secret
-REVERB_HOST="192.168.1.8"   # ← Must be your LAN IP for mobile device testing
+REVERB_HOST="192.168.1.17"   # ← Must be your LAN IP for mobile device testing
 REVERB_PORT=8080
 REVERB_SCHEME=http
 
@@ -423,18 +423,18 @@ Update `.env` with your database credentials and your local IP address for Rever
 
 **Terminal 1 — Laravel Backend**
 ```bash
-php artisan serve --host=192.168.1.8 --port=8000
+php artisan serve --host=192.168.1.17 --port=8000
 ```
 
 **Terminal 2 — Vite (Frontend Assets)**
 ```bash
-npm run dev -- --host 192.168.1.8
+npm run dev -- --host 192.168.1.17
 ```
 > If your mobile device shows a broken UI, either open port **5173** in Windows Firewall, or use `npm run build` instead (no hot reload but no firewall issue).
 
 **Terminal 3 — Laravel Reverb (WebSockets)**
 ```bash
-php artisan reverb:start --host=192.168.1.8 --port=8080
+php artisan reverb:start --host=192.168.1.17 --port=8080
 ```
 
 **Terminal 4 — Queue Worker (required for broadcasting)**
@@ -449,9 +449,9 @@ php artisan queue:work
 
 Once all four processes are running, open on your mobile device (same Wi-Fi):
 
-- **App:** `http://192.168.1.8:8000`
+- **App:** `http://192.168.1.17:8000`
 
-Ensure `REVERB_HOST="192.168.1.8"` is set in your `.env`. If you change it, restart all four processes.
+Ensure `REVERB_HOST="192.168.1.17"` is set in your `.env`. If you change it, restart all four processes.
 
 ---
 
@@ -459,11 +459,11 @@ Ensure `REVERB_HOST="192.168.1.8"` is set in your `.env`. If you change it, rest
 
 ```bash
 # Clear all chat messages (broadcasts to all users)
-curl -X POST http://192.168.1.8:8000/admin/chat/clear \
+curl -X POST http://192.168.1.17:8000/admin/chat/clear \
      -d "code=your_admin_secret"
 
 # Send a global popup announcement (auto-dismisses after 20s)
-curl -X POST http://192.168.1.8:8000/admin/announcement \
+curl -X POST http://192.168.1.17:8000/admin/announcement \
      -d "code=your_admin_secret&message=Server going down in 5 minutes"
 ```
 

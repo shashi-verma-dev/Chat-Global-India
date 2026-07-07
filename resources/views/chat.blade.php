@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Anonymous live chat room. Join the global conversation — no account needed." />
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>Global Chat — Anonymous Live Chat</title>
+    <title>Chat Global — Anonymous Live Chat</title>
+    <link rel="icon" type="image/png" href="{{ asset('images/logo.png') }}">
 
     {{-- Inter Font --}}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -279,14 +280,6 @@
             .floating-links {
                 display: none;
             }
-
-            header {
-                margin-top: 25px;
-            }
-
-            footer {
-                margin-bottom: 25px;
-            }
         }
 
         .floating-link {
@@ -494,7 +487,7 @@
     </style>
 </head>
 
-<body class="bg-slate-100 h-screen flex items-center justify-center p-0 sm:p-3 lg:p-5"
+<body class="bg-slate-100 h-[100dvh] flex items-center justify-center p-0 sm:p-3 lg:p-5"
     style="background-color: black !important">
 
     <div class="stars-bg">
@@ -514,7 +507,7 @@
         class="fixed top-4 right-4 z-40 flex flex-col gap-2 w-64 sm:w-72 pointer-events-none"></aside>
 
     <div
-        class="w-full max-w-4xl h-screen sm:h-[calc(100vh-1.5rem)] lg:h-[calc(100vh-2.5rem)] flex flex-col sm:rounded-2xl sm:shadow-2xl sm:border sm:border-slate-200/80 overflow-hidden relative z-10">
+        class="w-full max-w-4xl h-[100dvh] sm:h-[calc(100vh-1.5rem)] lg:h-[calc(100vh-2.5rem)] flex flex-col sm:rounded-2xl sm:shadow-2xl sm:border sm:border-slate-200/80 overflow-hidden relative z-10">
 
         <header
             class="sticky top-0 z-30 bg-white/90 backdrop-blur-md border-b border-slate-100 px-4 sm:px-6 py-3 sm:py-4 flex items-center justify-between shrink-0 shadow-sm">
@@ -526,11 +519,17 @@
                         <path d="M20 2H4a2 2 0 00-2 2v18l4-4h14a2 2 0 002-2V4a2 2 0 00-2-2z" />
                     </svg>
                 </div> --}}
-                <div>
+                <div class="flex items-center gap-3">
+                    <img src="{{ asset('images/logo.png') }}" alt="logo" style="height: 40px;width:auto;">
 
-                    <h1 class="text-sm sm:text-base font-bold text-gray-800 leading-none">Global Chat</h1>
-                    <p class="text-xs font-medium mt-0.5 leading-none">feel free to talk about anything.
-                    </p>
+                    <div>
+                        <h1 class="text-sm sm:text-base font-bold text-gray-800 leading-none">
+                            Chat Global
+                        </h1>
+                        <p class="text-xs font-medium mt-0.5 leading-none">
+                            Feel free to talk about anything.
+                        </p>
+                    </div>
                 </div>
             </div>
 
